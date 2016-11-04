@@ -61,6 +61,7 @@
             this.comboBox2.Size = new System.Drawing.Size(121, 21);
             this.comboBox2.TabIndex = 1;
             this.comboBox2.Text = "Fahrenheit";
+            this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
             // 
             // textFrom
             // 
@@ -69,11 +70,13 @@
             this.textFrom.Size = new System.Drawing.Size(74, 20);
             this.textFrom.TabIndex = 2;
             this.textFrom.Text = "0";
+            this.textFrom.TextChanged += new System.EventHandler(this.textFrom_TextChanged);
             // 
             // textTo
             // 
             this.textTo.Location = new System.Drawing.Point(13, 133);
             this.textTo.Name = "textTo";
+            this.textTo.ReadOnly = true;
             this.textTo.Size = new System.Drawing.Size(74, 20);
             this.textTo.TabIndex = 3;
             // 

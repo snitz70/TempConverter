@@ -25,7 +25,39 @@ namespace TempConverter.Gui
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
+            SetTemp(comboBox1.SelectedIndex);
+            DisplayTemp(comboBox2.SelectedIndex);
+        }
+
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            DisplayTemp(comboBox2.SelectedIndex);
+        }
+
+        private void DisplayTemp(int index)
+        {
+            if (index == 0)
+                textTo.Text = temperature.Celsius.ToString();
+            else if (index == 1)
+                textTo.Text = temperature.Fahrenheit.ToString();
+            else textTo.Text = temperature.Kelvin.ToString();
+        }
+
+        private void SetTemp(int index)
+        {
+            if (index == 0)
+                temperature.Celsius = decimal.Parse(textFrom.Text);
+            else if (index == 1)
+                temperature.Fahrenheit = decimal.Parse(textFrom.Text);
+            else
+                temperature.Kelvin = decimal.Parse(textFrom.Text);
+
+        }
+
+        private void textFrom_TextChanged(object sender, EventArgs e)
+        {
+            SetTemp(comboBox1.SelectedIndex);
+            DisplayTemp(comboBox2.SelectedIndex);
         }
     }
 }
