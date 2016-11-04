@@ -17,14 +17,15 @@ namespace TempConverter.Gui
 
         public Form1()
         {
-            temperature.Celsius = 0M;
-            //textTo.Text = temperature.Fahrenheit.ToString();
             InitializeComponent();
+            temperature = new Temperature();
+            temperature.Celsius = 0;
+            textTo.Text = temperature.Fahrenheit.ToString();
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            
         }
     }
 }

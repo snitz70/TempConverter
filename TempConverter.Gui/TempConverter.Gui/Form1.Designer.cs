@@ -68,6 +68,7 @@
             this.textFrom.Name = "textFrom";
             this.textFrom.Size = new System.Drawing.Size(74, 20);
             this.textFrom.TabIndex = 2;
+            this.textFrom.Text = "0";
             // 
             // textTo
             // 
