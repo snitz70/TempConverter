@@ -56,7 +56,7 @@
             "Celsius",
             "Fahrenheit",
             "Kelvin"});
-            this.comboBox2.Location = new System.Drawing.Point(136, 132);
+            this.comboBox2.Location = new System.Drawing.Point(136, 90);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(121, 21);
             this.comboBox2.TabIndex = 1;
@@ -74,7 +74,7 @@
             // 
             // textTo
             // 
-            this.textTo.Location = new System.Drawing.Point(13, 133);
+            this.textTo.Location = new System.Drawing.Point(13, 91);
             this.textTo.Name = "textTo";
             this.textTo.ReadOnly = true;
             this.textTo.Size = new System.Drawing.Size(74, 20);
@@ -83,7 +83,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(103, 80);
+            this.label1.Location = new System.Drawing.Point(106, 59);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(13, 13);
             this.label1.TabIndex = 4;
@@ -93,14 +93,17 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 180);
+            this.ClientSize = new System.Drawing.Size(274, 135);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textTo);
             this.Controls.Add(this.textFrom);
             this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.comboBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Temp Calculator";
             this.ResumeLayout(false);
             this.PerformLayout();
 

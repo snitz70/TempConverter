@@ -27,6 +27,9 @@ namespace TempConverter.Gui
         {
             SetTemp(comboBox1.SelectedIndex);
             DisplayTemp(comboBox2.SelectedIndex);
+            Console.WriteLine(temperature.Celsius.ToString(),
+                temperature.Fahrenheit.ToString(),
+                temperature.Kelvin.ToString());
         }
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
@@ -45,12 +48,19 @@ namespace TempConverter.Gui
 
         private void SetTemp(int index)
         {
-            if (index == 0)
-                temperature.Celsius = decimal.Parse(textFrom.Text);
-            else if (index == 1)
-                temperature.Fahrenheit = decimal.Parse(textFrom.Text);
-            else
-                temperature.Kelvin = decimal.Parse(textFrom.Text);
+            try
+            {
+                if (index == 0)
+                    temperature.Celsius = decimal.Parse(textFrom.Text);
+                else if (index == 1)
+                    temperature.Fahrenheit = decimal.Parse(textFrom.Text);
+                else
+                    temperature.Kelvin = decimal.Parse(textFrom.Text);
+            }
+            catch
+            {
+                MessageBox.Show("Temperature not in correct format");
+            }
 
         }
 
