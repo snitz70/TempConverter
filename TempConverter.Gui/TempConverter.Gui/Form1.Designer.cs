@@ -28,40 +28,40 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.tempFrom = new System.Windows.Forms.ComboBox();
+            this.tempTo = new System.Windows.Forms.ComboBox();
             this.textFrom = new System.Windows.Forms.TextBox();
             this.textTo = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // comboBox1
+            // tempFrom
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.tempFrom.FormattingEnabled = true;
+            this.tempFrom.Items.AddRange(new object[] {
             "Celsius",
             "Fahrenheit",
             "Kelvin"});
-            this.comboBox1.Location = new System.Drawing.Point(136, 26);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 0;
-            this.comboBox1.Text = "Celsius";
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.tempFrom.Location = new System.Drawing.Point(136, 26);
+            this.tempFrom.Name = "tempFrom";
+            this.tempFrom.Size = new System.Drawing.Size(121, 21);
+            this.tempFrom.TabIndex = 0;
+            this.tempFrom.Text = "Celsius";
+            this.tempFrom.SelectedIndexChanged += new System.EventHandler(this.tempFrom_SelectedIndexChanged);
             // 
-            // comboBox2
+            // tempTo
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
+            this.tempTo.FormattingEnabled = true;
+            this.tempTo.Items.AddRange(new object[] {
             "Celsius",
             "Fahrenheit",
             "Kelvin"});
-            this.comboBox2.Location = new System.Drawing.Point(136, 90);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 21);
-            this.comboBox2.TabIndex = 1;
-            this.comboBox2.Text = "Fahrenheit";
-            this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
+            this.tempTo.Location = new System.Drawing.Point(136, 90);
+            this.tempTo.Name = "tempTo";
+            this.tempTo.Size = new System.Drawing.Size(121, 21);
+            this.tempTo.TabIndex = 1;
+            this.tempTo.Text = "Fahrenheit";
+            this.tempTo.SelectedIndexChanged += new System.EventHandler(this.tempTo_SelectedIndexChanged);
             // 
             // textFrom
             // 
@@ -97,8 +97,8 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textTo);
             this.Controls.Add(this.textFrom);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.tempTo);
+            this.Controls.Add(this.tempFrom);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -111,8 +111,8 @@
 
         #endregion
 
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox tempFrom;
+        private System.Windows.Forms.ComboBox tempTo;
         private System.Windows.Forms.TextBox textFrom;
         private System.Windows.Forms.TextBox textTo;
         private System.Windows.Forms.Label label1;

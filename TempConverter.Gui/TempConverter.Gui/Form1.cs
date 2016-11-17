@@ -20,42 +20,42 @@ namespace TempConverter.Gui
             InitializeComponent();
             temperature = new Temperature();
             temperature.Celsius = 0;
+            temperature.ChangeTemp(0, 0);
             textTo.Text = temperature.Fahrenheit.ToString();
         }
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        private void tempFrom_SelectedIndexChanged(object sender, EventArgs e)
         {
-            SetTemp(comboBox1.SelectedIndex);
-            DisplayTemp(comboBox2.SelectedIndex);
-            Console.WriteLine(temperature.Celsius.ToString(),
-                temperature.Fahrenheit.ToString(),
-                temperature.Kelvin.ToString());
+            SetTemp(tempFrom.SelectedIndex);
+            DisplayTemp(tempTo.SelectedIndex);
         }
 
-        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        private void tempTo_SelectedIndexChanged(object sender, EventArgs e)
         {
-            DisplayTemp(comboBox2.SelectedIndex);
+            DisplayTemp(tempTo.SelectedIndex);
         }
 
         private void DisplayTemp(int index)
         {
-            if (index == 0)
-                textTo.Text = temperature.Celsius.ToString();
-            else if (index == 1)
-                textTo.Text = temperature.Fahrenheit.ToString();
-            else textTo.Text = temperature.Kelvin.ToString();
+            //temperature.ChangeTemp(textFrom.Text, index);
+            //if (index == 0)
+            //    textTo.Text = temperature.Celsius.ToString();
+            //else if (index == 1)
+            //    textTo.Text = temperature.Fahrenheit.ToString();
+            //else textTo.Text = temperature.Kelvin.ToString();
         }
 
         private void SetTemp(int index)
         {
             try
             {
-                if (index == 0)
-                    temperature.Celsius = decimal.Parse(textFrom.Text);
-                else if (index == 1)
-                    temperature.Fahrenheit = decimal.Parse(textFrom.Text);
-                else
-                    temperature.Kelvin = decimal.Parse(textFrom.Text);
+                //if (index == 0)
+                //    temperature.Celsius = decimal.Parse(textFrom.Text);
+                //else if (index == 1)
+                //    temperature.Fahrenheit = decimal.Parse(textFrom.Text);
+                //else
+                //    temperature.Kelvin = decimal.Parse(textFrom.Text);
+                temperature.ChangeTemp(decimal.Parse(textFrom.Text), index);
             }
             catch
             {
@@ -66,8 +66,8 @@ namespace TempConverter.Gui
 
         private void textFrom_TextChanged(object sender, EventArgs e)
         {
-            SetTemp(comboBox1.SelectedIndex);
-            DisplayTemp(comboBox2.SelectedIndex);
+            SetTemp(tempFrom.SelectedIndex);
+            DisplayTemp(tempTo.SelectedIndex);
         }
     }
 }

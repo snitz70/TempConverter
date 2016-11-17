@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TempConverter.Gui", "TempCo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TempConverter", "TempConverter\TempConverter.csproj", "{204FA9C5-BA94-4A6C-894E-C4397458ABC6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TempConverter.UnitTests", "TempConverter.UnitTests\TempConverter.UnitTests.csproj", "{F5A2D09F-8D95-4501-A9D8-4713CF73F5C6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{204FA9C5-BA94-4A6C-894E-C4397458ABC6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{204FA9C5-BA94-4A6C-894E-C4397458ABC6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{204FA9C5-BA94-4A6C-894E-C4397458ABC6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F5A2D09F-8D95-4501-A9D8-4713CF73F5C6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F5A2D09F-8D95-4501-A9D8-4713CF73F5C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F5A2D09F-8D95-4501-A9D8-4713CF73F5C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F5A2D09F-8D95-4501-A9D8-4713CF73F5C6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
