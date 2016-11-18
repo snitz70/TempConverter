@@ -14,6 +14,7 @@ namespace TempConverter.Gui
     public partial class Form1 : Form
     {
         Temperature temperature;
+        private enum Temps { Celsius, Fahrenheit, Kelvin };
 
         public Form1()
         {
@@ -43,28 +44,29 @@ namespace TempConverter.Gui
 
         private void DisplayTemp(int index)
         {
-            if (index == 0)
-                textTo.Text = temperature.Celsius.ToString();
-            if (index == 1)
-                textTo.Text = temperature.Fahrenheit.ToString();
-            if (index == 2)
-                textTo.Text = temperature.Kelvin.ToString();
+            if (index == (int)Temps.Celsius)
+                textTo.Text = temperature.Celsius.ToString("F2");
+            if (index == (int)Temps.Fahrenheit)
+                textTo.Text = temperature.Fahrenheit.ToString("F2");
+            if (index == (int)Temps.Kelvin)
+                textTo.Text = temperature.Kelvin.ToString("F2");
         }
 
         private void SetTemp(int index)
         {
-            if (index == 0)
-                temperature = Temperature.FromCelsius(decimal.Parse(textFrom.Text));
-            if (index == 1)
-                temperature = Temperature.FromFahrenheight(decimal.Parse(textFrom.Text));
-            if (index == 2)
-                temperature = Temperature.FromKelvin(decimal.Parse(textFrom.Text));
-        }
+            try
+            {
+                if (index == (int)Temps.Celsius)
+                    temperature = Temperature.FromCelsius(decimal.Parse(textFrom.Text));
+                if (index == (int)Temps.Fahrenheit)
+                    temperature = Temperature.FromFahrenheight(decimal.Parse(textFrom.Text));
+                if (index == (int)Temps.Kelvin)
+                    temperature = Temperature.FromKelvin(decimal.Parse(textFrom.Text));
+            }
+            catch
+            {
 
-        private void textTo_TextChanged(object sender, EventArgs e)
-        {
-            SetTemp(tempFrom.SelectedIndex);
-            DisplayTemp(tempTo.SelectedIndex);
+            }
         }
     }
 }

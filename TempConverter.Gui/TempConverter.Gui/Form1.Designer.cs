@@ -28,11 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.tempFrom = new System.Windows.Forms.ComboBox();
             this.tempTo = new System.Windows.Forms.ComboBox();
             this.textFrom = new System.Windows.Forms.TextBox();
-            this.textTo = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.textTo = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // tempFrom
@@ -72,14 +73,6 @@
             this.textFrom.Text = "0";
             this.textFrom.TextChanged += new System.EventHandler(this.textFrom_TextChanged);
             // 
-            // textTo
-            // 
-            this.textTo.Location = new System.Drawing.Point(13, 91);
-            this.textTo.Name = "textTo";
-            this.textTo.Size = new System.Drawing.Size(74, 20);
-            this.textTo.TabIndex = 3;
-            this.textTo.TextChanged += new System.EventHandler(this.textTo_TextChanged);
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -89,17 +82,25 @@
             this.label1.TabIndex = 4;
             this.label1.Text = "=";
             // 
+            // textTo
+            // 
+            this.textTo.Location = new System.Drawing.Point(13, 90);
+            this.textTo.Name = "textTo";
+            this.textTo.Size = new System.Drawing.Size(74, 20);
+            this.textTo.TabIndex = 5;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(274, 135);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.textTo);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.textFrom);
             this.Controls.Add(this.tempTo);
             this.Controls.Add(this.tempFrom);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Form1";
@@ -114,8 +115,8 @@
         private System.Windows.Forms.ComboBox tempFrom;
         private System.Windows.Forms.ComboBox tempTo;
         private System.Windows.Forms.TextBox textFrom;
-        private System.Windows.Forms.TextBox textTo;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox textTo;
     }
 }
 
