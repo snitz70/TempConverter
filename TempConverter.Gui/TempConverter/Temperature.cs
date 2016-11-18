@@ -8,86 +8,45 @@ namespace TempConverter
 {
     public class Temperature
     {
-        // set intial temperatures
-        private decimal fahrenheit = 32M;
-        private decimal celsius = 0M;
-        private decimal kelvin = 273.15M;
-
-        private int CurrentUnit;
-        private decimal result;
-
-        public enum Temps { Celsius, Fahrenheit, Kelvin }
+        private decimal _kelvin = 0.0M;
 
         public decimal Fahrenheit
         {
-            get
-            {
-                if (CurrentUnit == (int)Temps.Celsius) 
-                     result = celsius * 9 / 5 + 32;
-                else if (CurrentUnit == (int)Temps.Kelvin)
-                    result = kelvin * 9 / 5 - 459.67M;
-                else
-                    result = fahrenheit;
-                return result;
-
-            }
-            set
-            {
-                fahrenheit = value;
-            }
+            get { return _kelvin * 9 / 5 - 459.67M; }
+            set { _kelvin = (value + 459.67M) * 5 / 9; }
         }
 
         public decimal Celsius
         {
-            get
-            {
-                if (CurrentUnit == (int)Temps.Fahrenheit)
-                    result = (fahrenheit - 32) * 5 / 9;
-                else if (CurrentUnit == (int)Temps.Kelvin)
-                    result = kelvin - 273.15M;
-                else
-                    result = celsius;
-                return result;
-            }
-            set
-            {
-                celsius = value;
-            }
+            get { return _kelvin - 273.15M; }
+            set { _kelvin = value + 273.15M; }
         }
 
         public decimal Kelvin
         {
-            get
-            {
-                if (CurrentUnit == (int)Temps.Celsius)
-                    result = celsius + 273.15M;
-                else if (CurrentUnit == (int)Temps.Fahrenheit)
-                    result = (fahrenheit + 459.67M) * 5 / 9;
-                else
-                    result = kelvin;
-                return result;
-            }
-            set
-            {
-                kelvin = value;
-            }
+            get { return _kelvin; }
+            set { _kelvin = value; }
         }
 
-        public void ChangeTemp(decimal temp, int unit)
+        public static Temperature FromKelvin(decimal kelvin)
         {
-            if (unit == (int)Temps.Celsius)
-                Celsius = temp;
-            if (unit == (int)Temps.Fahrenheit)
-                Fahrenheit = temp;
-            if (unit == (int)Temps.Kelvin)
-                Kelvin = temp;
-
-            CurrentUnit = unit;
+            var temperature = new Temperature();
+            temperature.Kelvin = kelvin;
+            return temperature;
         }
 
-        //private bool ValidateTemp(decimal temp)
-        //{
-        //    decimal.TryParse
-        //}
+        public static Temperature FromFahrenheight(decimal fahrenheit)
+        {
+            var temperature = new Temperature();
+            temperature.Fahrenheit = fahrenheit;
+            return temperature;
+        }
+
+        public static Temperature FromCelsius(decimal celsius)
+        {
+            var temperature = new Temperature();
+            temperature.Celsius = celsius;
+            return temperature;
+        }
     }
 }

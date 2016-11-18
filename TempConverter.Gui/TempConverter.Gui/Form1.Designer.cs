@@ -76,9 +76,9 @@
             // 
             this.textTo.Location = new System.Drawing.Point(13, 91);
             this.textTo.Name = "textTo";
-            this.textTo.ReadOnly = true;
             this.textTo.Size = new System.Drawing.Size(74, 20);
             this.textTo.TabIndex = 3;
+            this.textTo.TextChanged += new System.EventHandler(this.textTo_TextChanged);
             // 
             // label1
             // 
